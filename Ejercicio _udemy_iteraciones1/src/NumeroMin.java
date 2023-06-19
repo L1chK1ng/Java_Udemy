@@ -18,12 +18,12 @@ public class NumeroMin {
         System.out.println("Ingrese la cantidad de numeros a ingresar (minimo 10)");
         int cantidad = input.nextInt();
 
-        int num = 0, numeroMenor=10;
+        int num = 0, numeroMenor= Integer.MAX_VALUE;
 
         for (int i = 0; i < cantidad; i++) {
             System.out.println("Ingrese el numero " + (i + 1));
             num = input.nextInt();
-            if (num < 10) {
+            if (num < 10 || num < numeroMenor) {
                 numeroMenor = num;
             } else {
                 numeroMenor = numeroMenor;
