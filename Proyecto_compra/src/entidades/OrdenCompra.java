@@ -64,11 +64,17 @@ public class OrdenCompra {
         return new Producto(fabricante, nombre, precio);
     }
     public void addProducto() {
-        Scanner input = new Scanner(System.in).useDelimiter("\n");
+        int j=0;
         System.out.println("Cargar los 4 productos");
         for (int i = 0; i < 4; i++) {
-            System.out.println("Cargue los datos del producto " + (i+1) + ":");
-            productos[i] = creadorProducto(i);
+            do {
+                System.out.println("Cargue los datos del producto " + (i+1) + ":");
+                productos[i] = creadorProducto(i);
+                if (i==0) {
+                    j++;
+                }
+            } while ((productos[i].getNombre().equalsIgnoreCase(productos[j-1].getNombre())) && i !=0);
+            j++;
         }
 
     }
